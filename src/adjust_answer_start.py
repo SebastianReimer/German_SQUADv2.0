@@ -146,7 +146,7 @@ for file_name in os.listdir(dir_path):
 
         save_name = "adjusted_" + file_name
         abs_save_path = os.path.join(save_dir, save_name)
-        #dump_json(data, abs_save_path)                 
+        dump_json(data, abs_save_path)                 
 
 print("> answers before:",count_answer_before)
 print("> answers deleted:",count_answer_deleted)
