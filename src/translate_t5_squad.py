@@ -58,43 +58,13 @@ def dump_json(dict2save, path):
 
 
 translator = pipeline(task="translation_en_to_de")
-text_en = "This a string whith. "
-print(translate(translator, text_en))
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
 
 
 # read original SQUAD
 file_path = "/home/sebastian/SideProject/QA/German_SQUADv2.0/data/squad_data/dev-v2.0.json"
 
 data = load_json(file_path)
-#print(data['data'][0].keys())
-'''
-paragraph = data['data'][0]['paragraphs']
-#for testing: use only one paragraph
-squad_small = {
-    "version":"v2.0",
-    "data": [
-        {
-            "title": "Normans",
-            "paragraphs": paragraph
-        }
-    ]
-}
-'''
+
 
 print(len(data['data']))
 #iterate over whole data and identify texts which should be translated
