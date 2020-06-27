@@ -6,7 +6,7 @@ import os
 
 
 dir_path =  "/home/sebastian/SideProject/QA/German_SQUADv2.0/data/squad_data/output/processed/"
-save_path = "/home/sebastian/SideProject/QA/German_SQUADv2.0/data/squad_data/output/processed/train_v2_german.json"
+save_path = "/home/sebastian/SideProject/QA/German_SQUADv2.0/data/squad_data/output/processed/merged/merged_train_v2_german.json"
 template = {
     "version": "v2.0",
     "data": []
