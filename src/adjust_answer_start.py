@@ -73,7 +73,8 @@ for file_name in os.listdir(dir_path):
                                     #print("> answer",answer['text'])
                                     #print(">>substring", substring)
 
-                                    if answer['text'] in substring:
+                                    #check if substring contains answer and string is not empty
+                                    if (answer['text'] in substring) & (answer['text'] != ""):
                                         match = True
                                     else:
                                         match = False
@@ -106,6 +107,8 @@ for file_name in os.listdir(dir_path):
                                         #print(f">>>answer before:")
                                         #print(answer)
                                         #define start and end string
+   
+
                                         if answer['answer_start'] < 100:
                                             tmp_start = 0
                                         else:
@@ -117,8 +120,8 @@ for file_name in os.listdir(dir_path):
                                         
                                         substring = context[tmp_start:tmp_end] #extract potentially relevant substring
                                         
-                                    # match = re.search(answer['text'], substring) #check if substring contains answer
-                                        if answer['text'] in substring:
+                                        #check if substring contains answer and string is not empty
+                                        if (answer['text'] in substring) & (answer['text'] != ""):
                                             match = True
                                         else:
                                             match = False
@@ -143,7 +146,7 @@ for file_name in os.listdir(dir_path):
 
         save_name = "adjusted_" + file_name
         abs_save_path = os.path.join(save_dir, save_name)
-        dump_json(data, abs_save_path)                 
+        #dump_json(data, abs_save_path)                 
 
 print("> answers before:",count_answer_before)
 print("> answers deleted:",count_answer_deleted)
