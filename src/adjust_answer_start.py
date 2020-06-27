@@ -6,7 +6,6 @@
 '''
 
 from utils import *
-import re
 import tqdm
 import os
 
