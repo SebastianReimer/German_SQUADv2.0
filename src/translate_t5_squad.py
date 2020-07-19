@@ -57,6 +57,7 @@ def dump_json(dict2save, path):
         json.dump(dict2save, f)  
 
 
+# instantiate the translator
 translator = pipeline(task="translation_en_to_de")
 
 
@@ -100,5 +101,6 @@ for ct, item in enumerate(data['data']):
                             #print(para[k])
                 #else:
                 #    break #TODO:remove enumerate, only for testing
-        
+
+# dump the translated data        
 dump_json(data, "/home/sebastian/SideProject/QA/German_SQUADv2.0/data/squad_data/squad_train_german.json")
