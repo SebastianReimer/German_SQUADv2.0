@@ -4,7 +4,7 @@
 Most of the data for Q/A are in English. To my knowledge, there is for German currently only one open-source Q/A dataset from Facebook ([MLQA dataset](https://github.com/facebookresearch/MLQA)). Creating questions and answers is a time consuming process which cannot be done by a single person in a reasonable amount of time. 
 In order to gain more data, I deciced to use the current state of the art transformer T5 from Huggingface. T5 has already a "built-in" capability to translate text easily from Englisch to German.
 
-If you do not want to use the T5 you can use another transformer for translating the data into to language of your choice
+If you do not want to use the T5 you can use another transformer for translating the data into to language of your choice.
 
 
 ## Modifications of SQUAD v2 dataset:
@@ -17,7 +17,8 @@ If you do not want to use the T5 you can use another transformer for translating
 1. (Optional) Split Squad-Dataset into smaller chunks
 In case you need to smaller chunks (especially of the SQUADv2-Train dataset) you can apply this script `split_squad.py`
 2. Run `translate_t5_squad.py` in order to translate dataset into German
-You may run this script on a Juypter Notebook (e.g. Colab) in order to use GPU-Support. All answers, plausible answers and contexts will be translated into German
+- You may run this script on a Juypter Notebook (e.g. Colab) in order to use GPU-Support. All answers, plausible answers and contexts will be translated into German
+- Alternatively, translate data with a transformer of your choice.
 3. Adjust start of answers in translated texts
 Once all the texts, anwers and contexts were translated you need to adjust the start of the answers to the (translated) German context. Additionally, delete answers that cannot be found in context. Furthermore, delete answers that contain only "" as String. For this run `adjust_answers_start.py`.
 4. (Optional) Merge datasets into one (training)-file
